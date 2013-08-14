@@ -780,7 +780,38 @@ $
 
 
     \begin{solution}
-      \nosolution
+      \begin{enumerate}
+      	\item Soient $x_i$ les tonnes respectivement payées par chacun des $5$ acheteur au prix $p_i$. Nous pouvons alors exprimer ce problème sous la forme du problème d'optimisation linéaire suivant :
+      	\begin{align*}
+            \max \sum_{i=1}^5 x_i p_i\\
+            \sum_{i=1}^5 x_i & = 20\\
+            x_1 & \geq 2\\
+            x_2 & \leq 2\\
+            x_2 & \geq 0\\
+            x_3 & \geq 0\\
+            x_3 & \geq 2x_6\\
+            x_3 & \leq 20x_6\\
+            x_4 & \leq 5\\
+            x_4 & \geq 0\\
+            x_5-x_4 & \leq 3\\
+            x_4-x_5 & \leq 3\\
+            x_6 & \geq 0\\
+            x_6 & \leq 1\\
+            x_i & \text{ entiers}\\
+          \end{align*}
+          
+          La partie la moins évidente de l'écriture du problème est d'exprimer le fait que l'acheteur C achète soit au moins 2 tonnes, soit rien du tout. Nous utilisons pour cela une variable binaire $x_6$ et les 3 contraintes suivantes 
+          \begin{align*}
+          x_3 & \geq 0\\
+            x_3 & \geq 2x_6\\
+            x_3 & \leq 20x_6\\
+             \end{align*}
+           On voit alors bien que si $x_6 = 0$, $x_3$ est contraint de valoir $0$ à cause de la première et de la dernière inégalité. Si par contre $x_6 = 1$, la deuxième contrainte force $x_3$ à valoir au moins $2$. Nous avons bien pris soin de choisir le coefficient $20$ dans la dernière inégalité pour que celle-ci soit toujours vérifiée.\\
+           
+           \item Soit $z*$ le coût optimal du problème de départ. Il suffit alors de transformer la fonction objectif en $\max x_3$ et de rajouter la contrainte $\sum_{i=1}^5 x_i p_i = z*$.\\
+           
+           \item Cela peut se faire par un raisonnement adéquat. L'énoncé nous dit déjà que $x_3 = 0$ et donc que $x_6 = 0$. L'acheteur B paye le plus donc on lui vend le maximum qu'on peut à savoir $2$ tonnes. Ensuite, l'idéal serait de donner le plus qu'on peut à l'acheteur D et de donner tout le reste au A mais on ne peut pas à cause de la contrainte sur l'acheteur E. Le mieux serait alors de donner aux acheteurs D, E, A respectivement $5$, $2$, $11$ tonnes ou $4$, $1$, $13$ tonnes ou $3$, $0$, $15$ tonnes. On se rend compte que ces 3 solutions donnent en fait le même coût total, il y a donc $3$ solutions optimales qui donnent un coût optimal de $475$. 
+      \end{enumerate}
     \end{solution}
 
   \item Vrai ou faux? Justifiez vos choix par quelques lignes, un contre-exemple ou un dessin. Soyez assez précis pour convaincre
