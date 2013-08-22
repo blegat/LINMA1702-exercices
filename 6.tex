@@ -281,8 +281,41 @@
 
 
     \begin{solution}
-      \nosolution
-    \end{solution}
+      \begin{itemize}
+      	\item Le problème primal est 
+	\begin{align*}
+	 \max 2x_1 + 3x_2 + 3x_3\\
+            x_1 + 2x_2 + 2x_3& \leq 12\\
+           2 x_1 + 4x_2 + x_3 & \leq 10\\
+            x_1\text{, }x_2 \text{, }x_3 & \geq 0\\
+	\end{align*}
+	
+	ou encore 
+	\begin{align*}
+	 - \min -2x_1 - 3x_2 - 3x_3\\
+            x_1 + 2x_2 + 2x_3& \leq 12\\
+            2x_1 + 4x_2 + x_3 & \leq 10\\
+            x_1\text{, }x_2 \text{, }x_3 & \geq 0\text{.}\\
+	\end{align*}
+	
+	Le dual de ce problème est donc
+      	\begin{align*}
+            - \max 12y_1 + 10y_2\\
+            y_1 + 2y_2 & \leq -2\\
+            2y_1 + 4y_2 & \leq -3\\
+            2y_1 + y_2 & \leq -3\\
+            y_1\text{, }y_2 & \leq 0\text{.}\\
+          \end{align*}
+          
+          On peut résoudre celui-ci géométriquement et on trouve que la solution optimale est en $(\frac{-4}{3}$, $\frac{-1}{3}$). Lorsque la quantité de coton disponible passe de $10$ à $10+\epsilon$, la fonction objectif change donc de $-\epsilon\text{.}y_2$ c'est-à-dire qu'elle augmente de $\frac{\epsilon}{3}$. En particulier, lorsque $\epsilon = 2$, elle augmente de $\frac{2}{3}$.
+          
+          \item Si $c < 0$, il n'y a pas de solution vu que $x_1\text{, }x_2 \text{, }x_3 \geq 0$.
+          Si $0 \leq c < 6$, la solution se situe en $(0, -3)$ ce qui donne comme coût optimal $3c$.
+          Si $c = 6$, tous les points du segment de la droite $2y_1+y_2 = -3$ entre $(-4/3,-1/3)$ et $(0,-3)$ sont des solutions optimales et ils donnent tous $18$ comme coût optimal (qui correspond bien à $3c$ aussi).
+          Si $6 < c$, le point $(-4/3,-1/3)$ est optimal donc le coût optimal est de $12\frac{4}{3}+c\frac{1}{3} = 16+\frac{c}{3}$.
+             
+     \end{itemize}
+   \end{solution}
 
   \item  Une université belge dispose d'au plus 5000 places pour des étudiants. Elle recrute des étudiants belges et
     des étudiants étrangers. L'université compte 440 professeurs. L'encadrement est d'au moins un professeur pour 12 belges et d'un professeur pour 10
