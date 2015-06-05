@@ -146,7 +146,7 @@
   \begin{solution}
     \begin{enumerate}
       \item La solution optimale est $(0,0)$.
-      \item L'ILGCA n'est pas vérifiée pour les points $(x_1,x_2)$ 
+      \item L'ILGCA est vérifiée pour les points $(x_1,x_2)$ 
       tels que $x_1 \neq 0$ puisque
       \begin{align*}
         \nabla c_1 &= \begin{pmatrix} 3x_1^2 \\ -1 \end{pmatrix} &
@@ -166,7 +166,8 @@
       Soit $x_2 = 0$, alors $\lambda_1 \, x_1^3 = 0$,
       ce qui est égalemment impossible.
       
-      On a donc bien une unique solution optimale $(0,0)$.
+      Notre solution optimale $(0,0)$ n'appara\^it pas ici puisqu'elle ne vérifie
+      pas l'ILGCA, or c'est nécessaire pour résoudre les conditions KKT.
     \end{enumerate}
   \end{solution}
   
