@@ -101,11 +101,13 @@ En effet,
     \item $f(x) = |x+2| + |x-3|$
       \begin{solution}
         La fonction globale devient
-        \begin{align*}
-          &2x-1& \forall x \geq 3 \\
-          &5& \forall x \in [-2,3] \\
-          &-2x+1& \forall x \leq -2.
-        \end{align*}
+        \[
+          f(x) = \left\{ \begin{array}{rl}
+            2x-1 & \forall x > 3 \\
+            5 & \forall x \in [-2,3] \\
+            -2x+1 & \forall x < -2 \\
+            \end{array}\right.
+        \]
         Les points stationnaires ($\nabla f = 0$) se trouvent en $[-2,3]$
         et la fonction prend la même valeur en chacun d'eux.
         Comme $\nabla^2 f=0$ pour tous ces points,
